@@ -1,0 +1,907 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://Sprites/Koven/coven_background_sky.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Koven/coven_background.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Koven/coven_moon_n_clouds.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Koven/coven.jpg" type="Texture" id=4]
+[ext_resource path="res://hero_light_big.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Koven/coven_cave.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Koven/coven_stonehange.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Koven/coven_demon_trap.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Koven/coven_fairy_tree.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Koven/coven_dog.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Koven/coven_witch_house.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Koven/coven_garden.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Koven/coven_wood.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Koven/coven_witch_assistant_house.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/Coven.gd" type="Script" id=17]
+[ext_resource path="res://Sprites/KovenBuyModule/coven_build_board.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Koven/build_icon.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/BuildBoardPopup.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Sprites/Koven/menu_burger.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/NewFader.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/CanvasLayer.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_demon_trap.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_graveyard.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_fairy_tree.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_dog.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_garden.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_cave.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_hedge.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_pot.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_stonehange.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_witch_assistant_house.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/KovenBuyModule/icon_mushrooms.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Menu/menu_background.png" type="Texture" id=35]
+[ext_resource path="res://Scenes/Bloodline.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scripts/BuildBoardPopup.gd" type="Script" id=37]
+[ext_resource path="res://SourceSerifPro-Regular.ttf" type="DynamicFontData" id=38]
+[ext_resource path="res://Sprites/Haus/coin.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Koven/coven_hedge.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Koven/coven_pot.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Koven/coven_graveyard.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Koven/coven_mushrooms.png" type="Texture" id=43]
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -1050, -0.25, 0, 0.3, 862.277, 0, -0.31, 268.469, 0.11, -90.2639 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -1050, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 70
+font_data = ExtResource( 38 )
+
+[sub_resource type="Animation" id=15]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 2000, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=16]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 2000, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="DynamicFont" id=17]
+size = 90
+font_data = ExtResource( 38 )
+
+[sub_resource type="Animation" id=18]
+tracks/0/type = "value"
+tracks/0/path = NodePath("../CanvasLayer/BuildButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CanvasLayer/BurgerButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:color:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.146287, 0.0339313, 0.102463, -0.116772, -0.0583737, 0.186145, 0.0872241, 0.333333, -0.126674, -0.101321, 0.124526, 0.205112, 1, -0.12, -0.31422, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:color:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.18175, 0.0237733, 0.0581055, -0.0842638, -0.0241742, 0.16, 0.0294679, 0.203922, -0.15, -0.0826465, 0.13487, 0.23125, 1, -0.15, -0.272093, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:color:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.21, 0.0391451, 0.132813, -0.1, -0.0620901, 0.16, 0.0853552, 0.419608, -0.12, -0.125611, 0.0757639, 0.174706, 1, -0.141488, -0.243159, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:color:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.7, 1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../CanvasLayer/Control:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.321569, -0.25, 0, 0.25, 0, 0.27451, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.215686, -0.25, 0, 0.25, 0, 0.137255, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.215686, -0.25, 0, 0.25, 0, 0.196078, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../CanvasLayer/BuildButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../CanvasLayer/BurgerButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../CanvasLayer/Control:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Coven" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoonClouds" type="Sprite" parent="."]
+position = Vector2( 541.666, 381.305 )
+texture = ExtResource( 3 )
+
+[node name="CovenBG" type="Sprite" parent="."]
+position = Vector2( 541.666, 951.48 )
+texture = ExtResource( 2 )
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="StoneHange" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 231.634, 384.868 )
+texture = ExtResource( 7 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/StoneHange"]
+position = Vector2( -0.137558, -4.48941 )
+emitting = false
+amount = 20
+lifetime = 0.55
+speed_scale = 0.8
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+orbit_velocity = 1.0
+scale_amount = 0.6
+color = Color( 1, 0.501961, 0.239216, 1 )
+
+[node name="Cave" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 219.51, 665.057 )
+texture = ExtResource( 6 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Cave"]
+emitting = false
+amount = 20
+lifetime = 0.55
+speed_scale = 0.8
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+color = Color( 1, 0.796078, 0.552941, 1 )
+
+[node name="AssistantHouse" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 342, 880.18 )
+texture = ExtResource( 16 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/AssistantHouse"]
+position = Vector2( -0.48999, -1.12299 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.8
+color = Color( 0.623529, 0.580392, 1, 1 )
+
+[node name="FairyTree" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 684.874, 681.308 )
+texture = ExtResource( 11 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/FairyTree"]
+position = Vector2( 0.635986, 1.74902 )
+emitting = false
+amount = 40
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 1.3
+color = Color( 0.027451, 1, 0.576471, 1 )
+
+[node name="Wood" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 881.473, 912.226 )
+texture = ExtResource( 15 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Wood"]
+position = Vector2( 4.03699, -3.16901 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+
+[node name="Garden" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 454.359, 1070.31 )
+texture = ExtResource( 14 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Garden"]
+position = Vector2( 3.151, 0.74707 )
+emitting = false
+amount = 30
+lifetime = 0.6
+speed_scale = 0.8
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.8
+color = Color( 0.631373, 1, 0.258824, 1 )
+
+[node name="House" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 682.521, 1007.22 )
+texture = ExtResource( 13 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/House"]
+position = Vector2( 0.989014, -0.162964 )
+emitting = false
+amount = 20
+lifetime = 0.6
+speed_scale = 0.8
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+color = Color( 0.854902, 0.282353, 1, 1 )
+
+[node name="Dog" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 914.499, 1263.59 )
+texture = ExtResource( 12 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Dog"]
+position = Vector2( -1.68335, 0.490845 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+color = Color( 1, 0.337255, 0.819608, 1 )
+
+[node name="Hedge" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 587.822, 1217.42 )
+texture = ExtResource( 40 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Hedge"]
+position = Vector2( -231.282, 55.2427 )
+emitting = false
+amount = 20
+speed_scale = 0.8
+explosiveness = 0.6
+texture = ExtResource( 5 )
+direction = Vector2( 0, -1 )
+spread = 90.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 400.0
+angle = 267.7
+scale_amount = 0.6
+color = Color( 1, 0.713726, 0.462745, 1 )
+
+[node name="DemonTrap" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 498, 1312 )
+texture = ExtResource( 10 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/DemonTrap"]
+position = Vector2( -0.958313, -0.0421143 )
+emitting = false
+amount = 20
+lifetime = 0.7
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 658.97
+orbit_velocity = 2.0
+scale_amount = 0.6
+color = Color( 0.992157, 1, 0.611765, 1 )
+
+[node name="Mushrooms" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 176.003, 1476.99 )
+texture = ExtResource( 43 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Mushrooms"]
+position = Vector2( 4.07574, 0.535522 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+
+[node name="Graveyard" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 787.351, 1654.07 )
+texture = ExtResource( 42 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Graveyard"]
+position = Vector2( 1.04047, 3.25232 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+
+[node name="Pot" type="Sprite" parent="Environment"]
+visible = false
+position = Vector2( 782.216, 1492.35 )
+texture = ExtResource( 41 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Environment/Pot"]
+position = Vector2( -2.81427, -2.83801 )
+emitting = false
+amount = 20
+lifetime = 0.55
+explosiveness = 0.63
+texture = ExtResource( 5 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 243.59
+scale_amount = 0.6
+
+[node name="BuildBoard" parent="." instance=ExtResource( 20 )]
+margin_left = -1050.0
+margin_right = -1010.0
+script = ExtResource( 37 )
+
+[node name="BuildBoard" type="TextureRect" parent="BuildBoard"]
+margin_left = -2.5199
+margin_top = 2.51984
+margin_right = 1077.48
+margin_bottom = 1922.52
+texture = ExtResource( 18 )
+
+[node name="ModuleOpen" type="AnimationPlayer" parent="BuildBoard"]
+anims/BuyOn = SubResource( 2 )
+
+[node name="ModuleClose" type="AnimationPlayer" parent="BuildBoard"]
+anims/BuyOff = SubResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BuildBoard"]
+margin_left = 223.0
+margin_top = 308.0
+margin_right = 3545.0
+margin_bottom = 1680.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildBoard/ScrollContainer"]
+margin_right = 248.0
+margin_bottom = 3019.0
+custom_constants/separation = 50
+
+[node name="CaveButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_right = 248.0
+margin_bottom = 229.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 29 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/CaveButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/CaveButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.361
+margin_top = 66.7419
+margin_right = 474.361
+margin_bottom = 140.742
+custom_fonts/font = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DemonTrapButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 279.0
+margin_right = 248.0
+margin_bottom = 508.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 24 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/DemonTrapButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/DemonTrapButton"]
+modulate = Color( 0.235294, 0.0901961, 0.0901961, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DogButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 558.0
+margin_right = 248.0
+margin_bottom = 787.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 27 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/DogButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/DogButton"]
+modulate = Color( 0.227451, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FairyTreeButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 837.0
+margin_right = 248.0
+margin_bottom = 1066.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 26 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/FairyTreeButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/FairyTreeButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GardenButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 1116.0
+margin_right = 248.0
+margin_bottom = 1345.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 28 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/GardenButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/GardenButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraveyardButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 1395.0
+margin_right = 248.0
+margin_bottom = 1624.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 25 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/GraveyardButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/GraveyardButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HedgeButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 1674.0
+margin_right = 248.0
+margin_bottom = 1903.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 30 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/HedgeButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/HedgeButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MushroomButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 1953.0
+margin_right = 248.0
+margin_bottom = 2182.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 34 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/MushroomButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/MushroomButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 2232.0
+margin_right = 248.0
+margin_bottom = 2461.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 31 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/PotButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/PotButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StonehangeButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 2511.0
+margin_right = 248.0
+margin_bottom = 2740.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 32 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/StonehangeButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/StonehangeButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AssistantButton" type="TextureButton" parent="BuildBoard/ScrollContainer/VBoxContainer"]
+margin_top = 2790.0
+margin_right = 248.0
+margin_bottom = 3019.0
+rect_pivot_offset = Vector2( 0, 100 )
+texture_normal = ExtResource( 33 )
+
+[node name="Tween" type="Tween" parent="BuildBoard/ScrollContainer/VBoxContainer/AssistantButton"]
+
+[node name="Label" type="Label" parent="BuildBoard/ScrollContainer/VBoxContainer/AssistantButton"]
+modulate = Color( 0.211765, 0.0862745, 0.0862745, 1 )
+margin_left = 320.0
+margin_top = 66.0
+margin_right = 474.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bloodline" parent="." instance=ExtResource( 36 )]
+margin_top = 2000.0
+margin_bottom = 2000.0
+
+[node name="TextureRect" type="TextureRect" parent="Bloodline"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ModuleOn" type="AnimationPlayer" parent="Bloodline"]
+anims/On = SubResource( 15 )
+
+[node name="ModuleOff" type="AnimationPlayer" parent="Bloodline"]
+anims/Off = SubResource( 16 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 23 )]
+offset = Vector2( 450, 120 )
+transform = Transform2D( 1, 0, 0, 1, 450, 120 )
+
+[node name="BuildButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = -445.717
+margin_top = -119.086
+margin_right = -177.716
+margin_bottom = 140.914
+rect_pivot_offset = Vector2( 130, 130 )
+toggle_mode = true
+pressed = true
+texture_normal = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/BuildButton"]
+
+[node name="BurgerButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 383.465
+margin_top = -109.966
+margin_right = 627.465
+margin_bottom = 134.034
+rect_pivot_offset = Vector2( 120, 120 )
+toggle_mode = true
+pressed = true
+texture_normal = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/BurgerButton"]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_left = -10.6787
+margin_top = -61.4026
+margin_right = 29.3213
+margin_bottom = -21.4026
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="CanvasLayer/Control"]
+margin_left = 128.145
+margin_top = 50.7239
+margin_right = 168.145
+margin_bottom = 155.724
+custom_fonts/font = SubResource( 17 )
+
+[node name="TextureRect" type="TextureButton" parent="CanvasLayer/Control"]
+margin_left = -69.4116
+margin_top = -2.66968
+margin_right = 122.588
+margin_bottom = 181.33
+texture_normal = ExtResource( 39 )
+
+[node name="Fader" parent="." instance=ExtResource( 22 )]
+
+[node name="AnimationPlayerIn" type="AnimationPlayer" parent="Fader"]
+anims/AnimIn = SubResource( 18 )
+
+[node name="AnimationPlayerOut" type="AnimationPlayer" parent="Fader"]
+anims/AnimOut = SubResource( 19 )
+
+[node name="coven" type="Sprite" parent="."]
+position = Vector2( 1855.93, 957.953 )
+texture = ExtResource( 4 )
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/CaveButton" to="." method="_on_CaveButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/DemonTrapButton" to="." method="_on_DemonTrapButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/DogButton" to="." method="_on_DogButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/FairyTreeButton" to="." method="_on_FairyTreeButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/GardenButton" to="." method="_on_GardenButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/GraveyardButton" to="." method="_on_GraveyardButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/HedgeButton" to="." method="_on_HedgeButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/MushroomButton" to="." method="_on_MushroomButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/PotButton" to="." method="_on_PotButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/StonehangeButton" to="." method="_on_StonehangeButton_pressed"]
+[connection signal="pressed" from="BuildBoard/ScrollContainer/VBoxContainer/AssistantButton" to="." method="_on_AssistantButton_pressed"]
+[connection signal="toggled" from="CanvasLayer/BuildButton" to="." method="_on_TextureButton_toggled"]
+[connection signal="toggled" from="CanvasLayer/BurgerButton" to="." method="_on_BurgerButton_toggled"]
+[connection signal="pressed" from="CanvasLayer/Control/TextureRect" to="." method="_on_TextureRect_pressed"]
+
+[editable path="Fader"]

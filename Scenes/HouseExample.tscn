@@ -1,0 +1,359 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://SourceSerifPro-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/Haus/coin.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/HouseExample.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Koven/menu_burger.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Haus/background_main.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/CanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Haus/fire_burning.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Haus/pot_smoke_animation.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Haus/pot.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Haus/sandclock_animation.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Haus/magic_ball_animation.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/NewFader.tscn" type="PackedScene" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "SmokeWeed"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.225189, -0.25, 0, 0.130622, 1.35202, 1.12665, -0.224761, 1.16334, 0.358373, 2.42539, 2.107, -0.257655, 0.777514, 0.264833, 1.94942, 2.92082, -0.19055, 1.09052, 0.0846894, -0.847627 ),
+"times": PoolRealArray( 0.1, 0.6, 1.2, 1.8 )
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FireFire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 2 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "AnimIn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.107741, 0.104301, 0.232343, -0.0556595, -0.0457109, 0.13669, 0.136524, 0.741176, -0.071006, -0.185471, 0.0453924, 0.132975, 1, -0.0267104, -0.065295, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.12217, 0.154658, 0.342377, -0.0575834, -0.12921, 0.116488, 0.302924, 0.933333, -0.0912074, -0.144074, 0.027115, 0.0181715, 1, -0.0517217, -0.026157, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.113513, 0.0571412, 0.188789, -0.0864425, -0.0926408, 0.111678, 0.275485, 0.937255, -0.0998652, -0.212125, 0.0473163, 0.0194775, 1, -0.0324823, -0.02864, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../CanvasLayer/CoinButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../CanvasLayer/Coins:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.980392, 0.917647, 0.498039, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../CanvasLayer/CovenButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../CanvasLayer/MagicBall:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../CanvasLayer/Sandclock:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "AnimOut"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.0929455, -0.160437, 0.591492, -0.0998097, 0.114042, 0.088029, -0.2215, 0.0470588, -0.0986931, 0.197651, 0.0504283, -0.027518, 0, -0.0281228, 0.00768983, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.112352, -0.225382, 0.483422, -0.0742752, 0.132054, 0.0778152, -0.167607, 0.0196078, -0.105843, 0.186163, 0.0351076, -0.00853202, 0, -0.047529, 0.00768983, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.104181, -0.183057, 0.683196, -0.0395483, 0.05079, 0.0921145, -0.208239, 0.0745098, -0.0833724, 0.224376, 0.0320435, -0.03296, 0, -0.047529, 0.0212338, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../CanvasLayer/CoinButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../CanvasLayer/Coins:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.980392, 0.917647, 0.498039, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../CanvasLayer/CovenButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../CanvasLayer/MagicBall:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../CanvasLayer/Sandclock:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 1920.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="CoinButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 45.846
+margin_top = 288.099
+margin_right = 237.846
+margin_bottom = 472.099
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.980392, 0.917647, 0.498039, 1 )
+margin_left = 34.0
+margin_top = 467.0
+margin_right = 278.0
+margin_bottom = 692.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CovenButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 835.0
+margin_top = 9.0
+margin_right = 1079.0
+margin_bottom = 253.0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sandclock" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 11 )
+centered = false
+hframes = 7
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Sandclock"]
+
+[node name="MagicBall" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 800, 724 )
+texture = ExtResource( 12 )
+centered = false
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/MagicBall"]
+
+[node name="Pot" type="Sprite" parent="."]
+position = Vector2( 544, 1656 )
+texture = ExtResource( 10 )
+
+[node name="Weed" type="Sprite" parent="Pot"]
+visible = false
+modulate = Color( 1, 1, 1, 0.443137 )
+position = Vector2( 8, -444 )
+texture = ExtResource( 9 )
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pot/Weed"]
+autoplay = "SmokeWeed"
+anims/SmokeWeed = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FireFire"
+anims/FireFire = SubResource( 3 )
+
+[node name="FireFire" type="Sprite" parent="."]
+position = Vector2( -84, 1616 )
+texture = ExtResource( 8 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Fader" parent="." instance=ExtResource( 13 )]
+
+[node name="AnimationPlayerIn" type="AnimationPlayer" parent="Fader"]
+anims/AnimIn = SubResource( 4 )
+
+[node name="AnimationPlayerOut" type="AnimationPlayer" parent="Fader"]
+anims/AnimOut = SubResource( 5 )
+[connection signal="pressed" from="CanvasLayer/CoinButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/CovenButton" to="." method="_on_TextureButton2_pressed"]
