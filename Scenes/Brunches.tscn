@@ -1,11 +1,203 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Brunches.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Family Tree/bloodline_stems.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Menu/menu_background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/WitchIcon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CanvasLayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/NewFader.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Koven/menu_burger.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Soon.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Soon.gd" type="Script" id=10]
+
+[sub_resource type="LineShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ParallaxBackground/ParallaxLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../ParallaxBackground/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CanvasLayer/BurgerButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../MainMenu:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 2000 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ChangeIcon"
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("../MainMenu:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.22, -418.811, 2000, -0.17, -1201.66, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../ParallaxBackground/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CanvasLayer/BurgerButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../ParallaxBackground/ParallaxLayer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 2000, -0.25, 0, 0.27, -2404.89, -0.000679299, -0.09, 0.00907171, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.41, -344.33, 2000, -0.08, -494.239, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 30, -0.25, 0, 0.202683, 329.224, 1150, -0.33532, 425.901, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1150, -0.25, 0, 0.32936, -451.969, 2260, -0.132637, -207.527, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
 
 [node name="Brunches" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -968.687, 985.342 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -4.29877, -798.197 )
+scale = Vector2( 3, 1 )
+shape = SubResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -19,3 +211,99 @@ motion_mirroring = Vector2( 0, 1920 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 2 )
 centered = false
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -3841.28 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 3835.63 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="WitchIcon" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 4 )]
+position = Vector2( 520, 800 )
+
+[node name="WitchIcon2" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 4 )]
+position = Vector2( 520, -3047.97 )
+
+[node name="Tween" type="Tween" parent="ParallaxBackground/ParallaxLayer"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+
+[node name="BurgerButton" type="TextureButton" parent="CanvasLayer"]
+margin_left = 830.0
+margin_right = 1074.0
+margin_bottom = 244.0
+rect_pivot_offset = Vector2( 110, 110 )
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/BurgerButton"]
+
+[node name="Fader" parent="." instance=ExtResource( 6 )]
+
+[node name="AnimationPlayerIn" type="AnimationPlayer" parent="Fader"]
+anims/AnimIn = SubResource( 2 )
+anims/ChangeIcon = SubResource( 3 )
+
+[node name="AnimationPlayerOut" type="AnimationPlayer" parent="Fader"]
+anims/AnimOut = SubResource( 4 )
+
+[node name="MainMenu" parent="." instance=ExtResource( 7 )]
+margin_top = 2000.0
+margin_right = 1080.0
+margin_bottom = 3920.0
+script = null
+
+[node name="CauldronButton" parent="MainMenu" index="4"]
+margin_top = 1377.31
+margin_bottom = 1794.31
+
+[node name="ModuleOn" type="AnimationPlayer" parent="MainMenu"]
+anims/MenuOn = SubResource( 5 )
+
+[node name="ModuleOff" type="AnimationPlayer" parent="MainMenu"]
+anims/MenuOff = SubResource( 6 )
+
+[node name="Soon" parent="MainMenu" instance=ExtResource( 9 )]
+margin_left = -1155.3
+margin_top = 155.551
+margin_right = -1119.3
+margin_bottom = -493.449
+script = ExtResource( 10 )
+
+[node name="TextureRect" parent="MainMenu/Soon" index="0"]
+margin_left = 30.0
+margin_top = 484.898
+margin_right = 1110.0
+margin_bottom = 1160.9
+
+[node name="SoonOn" type="AnimationPlayer" parent="MainMenu/Soon"]
+anims/AnimOn = SubResource( 7 )
+
+[node name="SoonOff" type="AnimationPlayer" parent="MainMenu/Soon"]
+anims/AnimOff = SubResource( 8 )
+[connection signal="tree_entered" from="ParallaxBackground/ParallaxLayer/WitchIcon/FrameBack/Sprite" to="." method="_on_Sprite_tree_entered"]
+[connection signal="tree_exited" from="ParallaxBackground/ParallaxLayer/WitchIcon/FrameBack/Sprite" to="." method="_on_Sprite_tree_exited"]
+[connection signal="tree_entered" from="ParallaxBackground/ParallaxLayer/WitchIcon2/FrameBack/Sprite" to="." method="_on_Sprite_tree_entered"]
+[connection signal="tree_exiting" from="ParallaxBackground/ParallaxLayer/WitchIcon2/FrameBack/Sprite" to="." method="_on_Sprite_tree_exiting"]
+[connection signal="toggled" from="CanvasLayer/BurgerButton" to="." method="_on_TextureButton_toggled"]
+[connection signal="pressed" from="MainMenu/ShopButton" to="." method="_on_ShopButton_pressed"]
+[connection signal="pressed" from="MainMenu/TomeButton" to="MainMenu/Soon" method="_on_TomeButton_pressed"]
+[connection signal="pressed" from="MainMenu/ScrollButton" to="MainMenu/Soon" method="_on_ScrollButton_pressed"]
+[connection signal="pressed" from="MainMenu/CovenButton" to="." method="_on_CovenButton_pressed"]
+[connection signal="pressed" from="MainMenu/CauldronButton" to="." method="_on_CauldronButton_pressed"]
+[connection signal="pressed" from="MainMenu/Soon/TextureRect" to="MainMenu/Soon" method="_on_TextureRect_pressed"]
+
+[editable path="ParallaxBackground/ParallaxLayer/WitchIcon"]
+
+[editable path="ParallaxBackground/ParallaxLayer/WitchIcon2"]
+
+[editable path="MainMenu"]
+
+[editable path="MainMenu/Soon"]

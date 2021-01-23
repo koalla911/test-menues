@@ -10,11 +10,11 @@ var price = 0
 var change = 0
 var price_array = 0
 
-#var first_price = Global.store["cave"]
-#var first_animation = Global.store["dog_upgrades"]
+
 
 func _ready():
 	$Fader/AnimationPlayerIn.play("AnimIn")
+	$Fader/AnimationPlayerIn.seek(0.0, true)
 	Global.load_score()
 	
 	storeButtons.get_node("StonehangeButton/Label").text = str(Global.store["stonehange"][price])
@@ -33,17 +33,29 @@ func _ready():
 func _process(_delta):
 	$CanvasLayer/Control/Coins.text = str(Global.current_score)
 
+#########HANDLED CHANGING DEATH SCENE
+	if Input.is_key_pressed(KEY_B):
+		Global.burning = true
+		select_death_screen()
+	if Input.is_key_pressed(KEY_D):
+		Global.burning = false
+		select_death_screen()
+
+func select_death_screen():
+	get_node("Fader/AnimationPlayerOut").play("AnimOut")
+	yield(get_node("Fader/AnimationPlayerOut"), "animation_finished")
+	get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1).queue_free()
+	get_tree().change_scene("res://Scenes/WitchDeath.tscn")
 
 func buying_module(price, button):
 	Global.load_score()
-	if Global.current_score >= int(price):
-		Global.current_score -= int(price) 
+	if Global.current_score >= price:
+		Global.current_score -= price
 		Global.save_score()
-#	else:
-#		storeButtons.get_node(button).disabled = true
 
 
-func set_build(array, buildName, button):
+
+func set_build(array, buildName, _button):
 	$BuildBoard/ModuleClose.play("BuyOff")
 	yield($BuildBoard/ModuleClose, "animation_finished")
 	environment.get_node(buildName).get_node("Particles2D").emitting = true
@@ -122,6 +134,7 @@ func _button_interpolate(thirdnoda, secondnoda, firstnoda, subnoda, noda):
 func _on_CaveButton_pressed():
 	_button_interpolate('Tween', 'CaveButton', 'VBoxContainer', 'ScrollContainer', 'BuildBoard')
 	buying_module(Global.store["cave"][0], "CaveButton")
+	
 	set_build(Global.store["cave_upgrades"], "Cave", "CaveButton")
 	set_price("CaveButton", Global.store["cave"])
 

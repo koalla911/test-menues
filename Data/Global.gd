@@ -2,7 +2,8 @@ extends Node
 
 var current_score = 0
 
-
+var burning
+var wasted
 
 var store = { 
 		"dog" : [500, 1000, 1500], "dog_upgrades" : [1, 2],
@@ -18,17 +19,19 @@ var store = {
 		"cave" : [400, 800, 1200], "cave_upgrades" : [1, 2]
 	}
 
+var witch_icons = [
+		"res://Sprites/Family Tree/witch_porttrait1.png",
+		"res://Sprites/Family Tree/witch_porttrait2.png",
+		"res://Sprites/Family Tree/witch_porttrait1.png",
+		"res://Sprites/Family Tree/witch_porttrait2.png",
+	]
 
-#var columns = 5
-#var rows = 2
-#
-#func make_2d_array():
-#	for i in columns:
-#		cave.append([1])
-#		for j in rows:
-#			cave[i].append(2)
-#	return cave
 
+func select_next_screen(scene):
+	get_node("Fader/AnimationPlayerOut").play("AnimOut")
+	yield(get_node("Fader/AnimationPlayerOut"), "animation_finished")
+	get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1).queue_free()
+	get_tree().change_scene(scene)
 
 var save_store_path = 'user://save'
 
